@@ -57,7 +57,7 @@
                 FontAttributes="Bold"
                 CornerRadius="50"
                 HeightRequest="68"
-                Padding="12,0"
+                Padding="12,0" 
                 Clicked="OnLoginClicked" />
 
         </VerticalStackLayout>
