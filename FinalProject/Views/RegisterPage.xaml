@@ -2,52 +2,119 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.RegisterPage"
-             Title="RegisterPage">
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="10">
+             Title="RegisterPage"
+             BackgroundColor="#111111"
+             Shell.NavBarIsVisible="False">
+    <ScrollView BackgroundColor="#111111">
+        <VerticalStackLayout Padding="24,30,24,30"
+                             Spacing="12"
+                             BackgroundColor="#111111">
 
-            <Label Text="Welcome To MuscleUp! Create an account"
-           FontSize="28"
-           FontAttributes="Bold"
-           HorizontalOptions="Center"
-           Margin="0,20,0,20" />
+            <Label Text="Welcome To MuscleUp!&#10;Create an account"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="White"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,20,0,25" />
 
-            <Label Text="Enter your new username:" />
-            <Entry x:Name="UserName" Placeholder="Username" />
-            <Label x:Name="errUserName" TextColor="Red" />
+            <Label Text="Enter your new username:"
+                   TextColor="#EEEEEE"
+                   FontSize="16" />
 
-            <Label Text="Enter your email:" />
+            <Entry x:Name="UserName"
+                   Placeholder="Username"
+                   PlaceholderColor="#999999"
+                   TextColor="White"
+                   BackgroundColor="#242424"
+                   HeightRequest="55" />
+
+            <Label x:Name="errUserName"
+                   TextColor="#FF6B6B"
+                   FontSize="13" />
+
+            <Label Text="Enter your email:"
+                   TextColor="#EEEEEE"
+                   FontSize="16" />
+
             <Entry x:Name="EmailAdress"
                    Placeholder="Email"
-                   Keyboard="Email" />
-            <Label x:Name="errEmail" TextColor="Red" />
+                   Keyboard="Email"
+                   PlaceholderColor="#999999"
+                   TextColor="White"
+                   BackgroundColor="#242424"
+                   HeightRequest="55" />
 
-            <Label Text="Enter your new password:" />
+            <Label x:Name="errEmail"
+                   TextColor="#FF6B6B"
+                   FontSize="13" />
+
+            <Label Text="Enter your new password:"
+                   TextColor="#EEEEEE"
+                   FontSize="16" />
+
             <Entry x:Name="PassWord"
                    Placeholder="Password"
-                   IsPassword="True" />
-            <Label x:Name="errPassword" TextColor="Red" />
+                   IsPassword="True"
+                   PlaceholderColor="#999999"
+                   TextColor="White"
+                   BackgroundColor="#242424"
+                   HeightRequest="55" />
 
-            <Label Text="Confirm password:" />
+            <Label x:Name="errPassword"
+                   TextColor="#FF6B6B"
+                   FontSize="13" />
+
+            <Label Text="Confirm password:"
+                   TextColor="#EEEEEE"
+                   FontSize="16" />
+
             <Entry x:Name="ConfirmPassWord"
                    Placeholder="Confirm Password"
-                   IsPassword="True" />
-            <Label x:Name="errConfirmPassword" TextColor="Red" />
+                   IsPassword="True"
+                   PlaceholderColor="#999999"
+                   TextColor="White"
+                   BackgroundColor="#242424"
+                   HeightRequest="55" />
 
-            <Label Text="Enter your birthday:" />
-            <DatePicker x:Name="DateOfBirth" />
-            <Label x:Name="errDateOfBirth" TextColor="Red" />
+            <Label x:Name="errConfirmPassword"
+                   TextColor="#FF6B6B"
+                   FontSize="13" />
 
-            <Label Text="Already have an account? Log In"
-                   TextColor="Blue"
-                   HorizontalOptions="Center">
+            <Label Text="Enter your birthday:"
+                   TextColor="#EEEEEE"
+                   FontSize="16" />
+
+            <DatePicker x:Name="DateOfBirth"
+                        TextColor="White"
+                        BackgroundColor="#242424"
+                        HeightRequest="55" />
+
+            <Label x:Name="errDateOfBirth"
+                   TextColor="#FF6B6B"
+                   FontSize="13" />
+
+            <Label Text="Already have an account? Go back"
+                   TextColor="#BBBBBB"
+                   FontSize="14"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,16,0,8">
                 <Label.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnLoginClicked" />
                 </Label.GestureRecognizers>
             </Label>
 
             <Button Text="Register"
-            Clicked="OnRegisterButtonClicked" />
+                    Clicked="OnRegisterButtonClicked"
+                    BackgroundColor="White"
+                    TextColor="#151515"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    CornerRadius="40"
+                    HeightRequest="60"
+                    Margin="0,12,0,10" />
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

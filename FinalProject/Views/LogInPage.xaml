@@ -2,36 +2,89 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FinalProject.Views.LogInPage"
-             Title="LogInPage">
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="10">
+             Title="LogInPage"
+             BackgroundColor="#111111"
+             Shell.NavBarIsVisible="False">
+    
+    <ScrollView BackgroundColor="#111111">
+        <VerticalStackLayout
+            Padding="24,30,24,30"
+            Spacing="12"
+            BackgroundColor="#111111">
 
-            <Label Text="Sign In To MuscleUp"
-                   FontSize="28"
-                   FontAttributes="Bold"
-                   HorizontalOptions="Center"
-                   Margin="0,20,0,20" />
+            <Label
+                Text="Sign In To MuscleUp"
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="White"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Margin="0,30,0,30" />
 
-            <Label Text="Enter your Email:" />
-            <Entry x:Name="Email" Placeholder="Email" />
-            <Label x:Name="errEmail" TextColor="Red"/>
+            <Label
+                Text="Enter your Email:"
+                TextColor="#EEEEEE"
+                FontSize="16" />
 
-            <Label Text="Enter your password:" />
-            <Entry x:Name="PassWord"
-               Placeholder="Password"
-               IsPassword="True" />
-            <Label x:Name="errPassword" TextColor="Red"/>
+            <Entry
+                x:Name="Email"
+                Placeholder="Email"
+                PlaceholderColor="#999999"
+                TextColor="White"
+                BackgroundColor="#242424"
+                Keyboard="Email"
+                HeightRequest="55" />
 
-            <Label Text="Don't have an account? Register"
-                TextColor="Blue"
-                HorizontalOptions="Center">
+            <Label
+                x:Name="errEmail"
+                TextColor="#FF6B6B"
+                FontSize="13" />
+
+            <Label
+                Text="Enter your password:"
+                TextColor="#EEEEEE"
+                FontSize="16"
+                Margin="0,8,0,0" />
+
+            <Entry
+                x:Name="PassWord"
+                Placeholder="Password"
+                IsPassword="True"
+                PlaceholderColor="#999999"
+                TextColor="White"
+                BackgroundColor="#242424"
+                HeightRequest="55" />
+
+            <Label
+                x:Name="errPassword"
+                TextColor="#FF6B6B"
+                FontSize="13" />
+
+            <Label
+                Text="Don't have an account? Go back"
+                TextColor="#BBBBBB"
+                FontSize="14"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                Margin="0,16,0,8">
+
                 <Label.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="OnRegisterClicked" />
+                    <TapGestureRecognizer
+                        Tapped="OnWelcomePageClicked" />
                 </Label.GestureRecognizers>
+
             </Label>
 
-            <Button Text="Sign In" 
-                    Clicked="OnSignInClicked"/>
+            <Button
+                Text="Sign In"
+                Clicked="OnSignInClicked"
+                BackgroundColor="White"
+                TextColor="#151515"
+                FontSize="18"
+                FontAttributes="Bold"
+                CornerRadius="40"
+                HeightRequest="60"
+                Margin="0,12,0,0" />
 
         </VerticalStackLayout>
     </ScrollView>

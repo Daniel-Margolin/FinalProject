@@ -8,9 +8,9 @@ public partial class LogInPage : ContentPage
     {
         InitializeComponent();
     }
-    private async void OnRegisterClicked(object sender, TappedEventArgs e)
+    private async void OnWelcomePageClicked(object sender, TappedEventArgs e)
     {
-        await Navigation.PushAsync(new RegisterPage());
+        await Navigation.PushAsync(new WelcomePage());
     }
     private async void OnSignInClicked(object sender, EventArgs e)
     {
