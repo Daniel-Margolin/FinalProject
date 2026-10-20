@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.PlanQuestionnairePage"
+             Title="PlanQuestionnairePage"
+                 BackgroundColor="#111111">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,30"
+            Spacing="18">
+
+            <Label
+                Text="MUSCLEUP"
+                FontSize="14"
+                FontAttributes="Bold"
+                TextColor="#BBBBBB"
+                CharacterSpacing="3" />
+
+            <Label
+                Text="Let's build your plan."
+                FontSize="30"
+                FontAttributes="Bold"
+                TextColor="White" />
+
+            <Label
+                Text="Tell us a little about yourself to get started."
+                FontSize="15"
+                TextColor="#BBBBBB" />
+
+            <Label
+                Text="STEP 1 OF 2"
+                FontSize="12"
+                FontAttributes="Bold"
+                TextColor="#BBBBBB"
+                Margin="0,8,0,0" />
+
+            <ProgressBar
+                Progress="0.5"
+                ProgressColor="White"
+                BackgroundColor="#444444" />
+
+            <Label
+                Text="What's your main goal?"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="White"
+                Margin="0,10,0,0" />
+
+            <VerticalStackLayout Spacing="4">
+                <RadioButton
+                    x:Name="LoseFatRadio"
+                    Content="Lose body fat"
+                    GroupName="Goal"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="BuildMuscleRadio"
+                    Content="Build muscle"
+                    GroupName="Goal"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="RecompRadio"
+                    Content="Lose fat and build muscle"
+                    GroupName="Goal"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="FitnessRadio"
+                    Content="Improve fitness"
+                    GroupName="Goal"
+                    TextColor="White" />
+            </VerticalStackLayout>
+
+            <Label
+                Text="How old are you?"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="White"
+                Margin="0,8,0,0" />
+
+            <Entry
+                x:Name="AgeEntry"
+                Placeholder="Age in years"
+                Keyboard="Numeric"
+                TextColor="White"
+                PlaceholderColor="#999999"
+                BackgroundColor="#222222"
+                HeightRequest="52" />
+
+            <Label
+                Text="What's your height?"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="White" />
+
+            <Entry
+                x:Name="HeightEntry"
+                Placeholder="Height in cm"
+                Keyboard="Numeric"
+                TextColor="White"
+                PlaceholderColor="#999999"
+                BackgroundColor="#222222"
+                HeightRequest="52" />
+
+            <Label
+                Text="What's your current weight?"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="White" />
+
+            <Entry
+                x:Name="WeightEntry"
+                Placeholder="Weight in kg"
+                Keyboard="Numeric"
+                TextColor="White"
+                PlaceholderColor="#999999"
+                BackgroundColor="#222222"
+                HeightRequest="52" />
+
+            <Label
+                x:Name="ErrorLabel"
+                Text=""
+                TextColor="#FF6B6B"
+                FontSize="13"
+                IsVisible="False" />
+
+            <Button
+                Text="Continue"
+                BackgroundColor="White"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="16"
+                HeightRequest="54"
+                CornerRadius="12"
+                Clicked="OnContinueClicked" />
+
+            <Button
+                Text="Go back"
+                BackgroundColor="Transparent"
+                TextColor="#BBBBBB"
+                FontSize="14"
+                HeightRequest="44"
+                Clicked="OnBackClicked" />
+
+            <Label
+                Text="You can update your information later."
+                FontSize="12"
+                HorizontalTextAlignment="Center"
+                TextColor="#999999" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

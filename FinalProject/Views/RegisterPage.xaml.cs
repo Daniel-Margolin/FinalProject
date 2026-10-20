@@ -21,9 +21,6 @@ public partial class RegisterPage : ContentPage
         string password = PassWord.Text;
         string confirmPassword = ConfirmPassWord.Text;
 
-        DateTime birthday = DateOfBirth.Date;
-        DateTime today = DateTime.Today;
-
         errUserName.Text = "";
         errEmail.Text = "";
         errPassword.Text = "";
@@ -71,26 +68,12 @@ public partial class RegisterPage : ContentPage
             return;
         }
 
-        int age = today.Year - birthday.Year;
-
-        if (birthday.Date > today.AddYears(-age))
-        {
-            age--;
-        }
-
-        if (age < 14)
-        {
-            errDateOfBirth.Text = "You must be at least 14 years old.";
-            return;
-        }
-
         // Create the new user.
         User newUser = new User
         {
             UserName = username,
             Email = email,
             Password = password,
-            DateBirth = birthday.ToString("yyyy-MM-dd")
         };
 
         // Save the user in our fake-data repository.

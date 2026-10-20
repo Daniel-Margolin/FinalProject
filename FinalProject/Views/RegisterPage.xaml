@@ -10,7 +10,7 @@
                              Spacing="12"
                              BackgroundColor="#111111">
 
-            <Label Text="Welcome To MuscleUp!&#10;Create an account"
+            <Label Text="Final Step!&#10;Create an account"
                    FontSize="28"
                    FontAttributes="Bold"
                    TextColor="White"
@@ -81,14 +81,6 @@
                    TextColor="#FF6B6B"
                    FontSize="13" />
 
-            <Label Text="Enter your birthday:"
-                   TextColor="#EEEEEE"
-                   FontSize="16" />
-
-            <DatePicker x:Name="DateOfBirth"
-                        TextColor="White"
-                        BackgroundColor="#242424"
-                        HeightRequest="55" />
 
             <Label x:Name="errDateOfBirth"
                    TextColor="#FF6B6B"

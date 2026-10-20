@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.PlanQuestionnairePage2"
+             Title="PlanQuestionnairePage2"
+             BackgroundColor="#111111">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="24,30"
+            Spacing="16">
+
+            <Label
+                Text="MUSCLEUP"
+                FontSize="14"
+                FontAttributes="Bold"
+                CharacterSpacing="3"
+                TextColor="#BBBBBB" />
+
+            <Label
+                Text="Your training lifestyle."
+                FontSize="28"
+                FontAttributes="Bold"
+                TextColor="White" />
+
+            <Label
+                Text="A few more questions to personalize your plan."
+                FontSize="15"
+                TextColor="#BBBBBB" />
+
+            <Label
+                Text="STEP 2 OF 2"
+                FontSize="12"
+                FontAttributes="Bold"
+                TextColor="#BBBBBB"
+                Margin="0,8,0,0" />
+
+            <ProgressBar
+                Progress="1"
+                ProgressColor="White"
+                BackgroundColor="#444444" />
+
+            <!-- Current workout frequency -->
+
+            <Label
+                Text="How many days per week do you currently work out?"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="White"
+                Margin="0,10,0,0" />
+
+            <VerticalStackLayout Spacing="3">
+
+                <RadioButton
+                    x:Name="Current0"
+                    Content="0 days"
+                    GroupName="CurrentDays"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="Current12"
+                    Content="1–2 days"
+                    GroupName="CurrentDays"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="Current34"
+                    Content="3–4 days"
+                    GroupName="CurrentDays"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="Current56"
+                    Content="5–6 days"
+                    GroupName="CurrentDays"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="CurrentEvery"
+                    Content="Every day"
+                    GroupName="CurrentDays"
+                    TextColor="White" />
+
+            </VerticalStackLayout>
+
+            <!-- Available training days -->
+
+            <Label
+                Text="How many days per week can you train?"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="White"
+                Margin="0,10,0,0" />
+
+            <VerticalStackLayout Spacing="3">
+
+                <RadioButton
+                    x:Name="Available12"
+                    Content="1–2 days"
+                    GroupName="AvailableDays"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="Available3"
+                    Content="3 days"
+                    GroupName="AvailableDays"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="Available4"
+                    Content="4 days"
+                    GroupName="AvailableDays"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="Available5"
+                    Content="5 days"
+                    GroupName="AvailableDays"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="Available67"
+                    Content="6–7 days"
+                    GroupName="AvailableDays"
+                    TextColor="White" />
+
+            </VerticalStackLayout>
+
+            <!-- Daily calories -->
+
+            <Label
+                Text="How many calories do you eat per day?"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="White"
+                Margin="0,10,0,0" />
+
+            <Entry
+                x:Name="CaloriesEntry"
+                Placeholder="Daily calories (kcal)"
+                Keyboard="Numeric"
+                TextColor="White"
+                PlaceholderColor="#999999"
+                BackgroundColor="#222222"
+                HeightRequest="52" />
+
+            <HorizontalStackLayout
+                Spacing="8"
+                VerticalOptions="Center">
+
+                <CheckBox
+                    x:Name="CaloriesUnknownCheckBox"
+                    Color="White"
+                    CheckedChanged="OnCaloriesUnknownChanged" />
+
+                <Label
+                    Text="I don't know"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    FontSize="14" />
+
+            </HorizontalStackLayout>
+
+            <!-- Activity level -->
+
+            <Label
+                Text="How active are you outside your workouts?"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="White"
+                Margin="0,10,0,0" />
+
+            <VerticalStackLayout Spacing="3">
+
+                <RadioButton
+                    x:Name="ActivitySitting"
+                    Content="Mostly sitting"
+                    GroupName="Activity"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="ActivityLight"
+                    Content="Lightly active"
+                    GroupName="Activity"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="ActivityModerate"
+                    Content="Moderately active"
+                    GroupName="Activity"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="ActivityVery"
+                    Content="Very active"
+                    GroupName="Activity"
+                    TextColor="White" />
+
+            </VerticalStackLayout>
+
+            <!-- Preferred workout location -->
+
+            <Label
+                Text="Where do you prefer to work out?"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="White"
+                Margin="0,10,0,0" />
+
+            <VerticalStackLayout Spacing="3">
+
+                <RadioButton
+                    x:Name="LocationHome"
+                    Content="At home"
+                    GroupName="Location"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="LocationGym"
+                    Content="At the gym"
+                    GroupName="Location"
+                    TextColor="White" />
+
+                <RadioButton
+                    x:Name="LocationBoth"
+                    Content="Both"
+                    GroupName="Location"
+                    TextColor="White" />
+
+            </VerticalStackLayout>
+
+            <!-- Error message -->
+
+            <Label
+                x:Name="ErrorLabel"
+                Text=""
+                TextColor="#FF6B6B"
+                FontSize="13"
+                IsVisible="False" />
+
+            <!-- Continue button -->
+
+            <Button
+                Text="Continue"
+                BackgroundColor="White"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="16"
+                HeightRequest="54"
+                CornerRadius="12"
+                Clicked="OnContinueClicked" />
+
+            <!-- Go back button -->
+
+            <Button
+                Text="Go back"
+                BackgroundColor="Transparent"
+                TextColor="#BBBBBB"
+                FontSize="14"
+                HeightRequest="44"
+                Clicked="OnBackClicked" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
