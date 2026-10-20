@@ -47,11 +47,8 @@ public partial class LogInPage : ContentPage
             return;
         }
 
-        // Login successful!
-        await DisplayAlert(
-            "Welcome!",
-            $"Hello, {user.UserName}! You have successfully logged in.",
-            "OK");
+        // Goes to the HomePage
+        await Navigation.PushAsync(new HomePage());
 
         // You can navigate to your home page here later.
     }

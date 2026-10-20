@@ -85,12 +85,6 @@ public partial class RegisterPage : ContentPage
             return;
         }
 
-        await DisplayAlert(
-            "Registration Successful",
-            "Your account has been created! You can now log in.",
-            "OK");
-
-        // Return to the existing login page.
-        await Navigation.PopAsync();
+        await Navigation.PushAsync(new HomePage());
     }
 }

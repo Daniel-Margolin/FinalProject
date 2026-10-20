@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FinalProject.Views.HomePage"
+             Title="HomePage"
+             BackgroundColor="#111111"
+             NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="*,Auto"
+          BackgroundColor="#111111">
+
+        <!-- Main Dashboard -->
+        <ScrollView Grid.Row="0">
+            <VerticalStackLayout Padding="22,24,22,20"
+                                 Spacing="24">
+
+                <!-- Top Bar -->
+                <Grid ColumnDefinitions="*,Auto,Auto"
+                      ColumnSpacing="12">
+
+                    <Border Grid.Column="0"
+                            BackgroundColor="#202020"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 28"
+                            Padding="16,10"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center">
+
+                        <HorizontalStackLayout Spacing="7">
+                            <Label Text="🔥"
+                                   FontSize="22"
+                                   VerticalOptions="Center"/>
+                            <Label Text="1"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   VerticalOptions="Center"/>
+                        </HorizontalStackLayout>
+                    </Border>
+
+                    <Button Grid.Column="1"
+                            Text="♙"
+                            FontSize="23"
+                            BackgroundColor="#202020"
+                            TextColor="White"
+                            CornerRadius="28"
+                            WidthRequest="54"
+                            HeightRequest="54"
+                            Padding="0"
+                            Clicked="OnAchievementsClicked"/>
+
+                    <Button Grid.Column="2"
+                            Text="⚙"
+                            FontSize="24"
+                            BackgroundColor="#202020"
+                            TextColor="White"
+                            CornerRadius="28"
+                            WidthRequest="54"
+                            HeightRequest="54"
+                            Padding="0"
+                            Clicked="OnSettingsClicked"/>
+                </Grid>
+
+                <!-- Profile -->
+                <VerticalStackLayout Spacing="8"
+                                     HorizontalOptions="Center">
+
+                    <Border WidthRequest="118"
+                            HeightRequest="118"
+                            Stroke="#292929"
+                            StrokeThickness="6"
+                            StrokeShape="RoundRectangle 59"
+                            BackgroundColor="#E4E4E4"
+                            Padding="10">
+
+                        <Grid>
+                            <Label Text="💪"
+                                   FontSize="54"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </Grid>
+                    </Border>
+
+                    <Label x:Name="UsernameLabel"
+                           Text="@username"
+                           FontSize="29"
+                           TextColor="White"
+                           HorizontalOptions="Center"/>
+
+                    <Label Text="Your fitness journey starts here"
+                           FontSize="15"
+                           TextColor="#929292"
+                           HorizontalOptions="Center"/>
+
+                    <Button Text="Edit profile"
+                            FontSize="13"
+                            TextColor="#39D353"
+                            BackgroundColor="Transparent"
+                            Padding="10,4"
+                            HeightRequest="35"
+                            Clicked="OnProfileClicked"/>
+                </VerticalStackLayout>
+
+                <!-- Statistics -->
+                <Grid ColumnDefinitions="*,Auto,*,Auto,*"
+                      ColumnSpacing="8">
+
+                    <VerticalStackLayout Grid.Column="0"
+                                         Spacing="8"
+                                         HorizontalOptions="Center">
+                        <Label Text="◷"
+                               FontSize="25"
+                               TextColor="#858585"
+                               HorizontalOptions="Center"/>
+                        <Label x:Name="ActiveTimeLabel"
+                               Text="0 days"
+                               FontSize="16"
+                               TextColor="White"
+                               HorizontalTextAlignment="Center"/>
+                        <Label Text="Active time"
+                               FontSize="12"
+                               TextColor="#929292"
+                               HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+
+                    <BoxView Grid.Column="1"
+                             WidthRequest="1"
+                             HeightRequest="48"
+                             Color="#444444"
+                             VerticalOptions="Center"/>
+
+                    <VerticalStackLayout Grid.Column="2"
+                                         Spacing="8"
+                                         HorizontalOptions="Center">
+                        <Label Text="🏋"
+                               FontSize="25"
+                               HorizontalOptions="Center"/>
+                        <Label x:Name="WeightLiftedLabel"
+                               Text="0 kg"
+                               FontSize="16"
+                               TextColor="White"
+                               HorizontalTextAlignment="Center"/>
+                        <Label Text="Total lifted"
+                               FontSize="12"
+                               TextColor="#929292"
+                               HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+
+                    <BoxView Grid.Column="3"
+                             WidthRequest="1"
+                             HeightRequest="48"
+                             Color="#444444"
+                             VerticalOptions="Center"/>
+
+                    <VerticalStackLayout Grid.Column="4"
+                                         Spacing="8"
+                                         HorizontalOptions="Center">
+                        <Label Text="💪"
+                               FontSize="25"
+                               HorizontalOptions="Center"/>
+                        <Label x:Name="WorkoutsLabel"
+                               Text="0"
+                               FontSize="16"
+                               TextColor="White"
+                               HorizontalTextAlignment="Center"/>
+                        <Label Text="Workouts"
+                               FontSize="12"
+                               TextColor="#929292"
+                               HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </Grid>
+
+                <!-- Achievement Badges -->
+                <Grid ColumnDefinitions="*,*,*"
+                      ColumnSpacing="12">
+
+                    <Border Grid.Column="0"
+                            BackgroundColor="#191919"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 18"
+                            Padding="10">
+                        <VerticalStackLayout Spacing="4"
+                                             HorizontalOptions="Center">
+                            <Label Text="🏆"
+                                   FontSize="38"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="Starter"
+                                   FontSize="12"
+                                   TextColor="#E8C75A"
+                                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Column="1"
+                            BackgroundColor="#191919"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 18"
+                            Padding="10">
+                        <VerticalStackLayout Spacing="4"
+                                             HorizontalOptions="Center">
+                            <Label Text="🥇"
+                                   FontSize="38"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="Consistency"
+                                   FontSize="12"
+                                   TextColor="#E8C75A"
+                                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <Border Grid.Column="2"
+                            BackgroundColor="#191919"
+                            StrokeThickness="0"
+                            StrokeShape="RoundRectangle 18"
+                            Padding="10">
+                        <VerticalStackLayout Spacing="4"
+                                             HorizontalOptions="Center">
+                            <Label Text="❄️"
+                                   FontSize="38"
+                                   HorizontalOptions="Center"/>
+                            <Label Text="Recovery"
+                                   FontSize="12"
+                                   TextColor="#78C9FF"
+                                   HorizontalOptions="Center"/>
+                        </VerticalStackLayout>
+                    </Border>
+                </Grid>
+
+                <!-- Muscle Activity Card -->
+                <Border BackgroundColor="#1D1D1D"
+                        Stroke="#292929"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 30"
+                        Padding="20">
+
+                    <VerticalStackLayout Spacing="16">
+
+                        <Grid ColumnDefinitions="*,Auto">
+                            <VerticalStackLayout Spacing="4">
+                                <Label Text="Muscles this week"
+                                       FontSize="21"
+                                       TextColor="White"
+                                       FontAttributes="Bold"/>
+
+                                <Label x:Name="MuscleActivityLabel"
+                                       Text="0%"
+                                       FontSize="35"
+                                       TextColor="#39D353"/>
+                            </VerticalStackLayout>
+
+                            <Button Grid.Column="1"
+                                    Text="↗"
+                                    FontSize="24"
+                                    TextColor="White"
+                                    BackgroundColor="#292929"
+                                    CornerRadius="25"
+                                    WidthRequest="48"
+                                    HeightRequest="48"
+                                    Padding="0"
+                                    VerticalOptions="Start"
+                                    Clicked="OnMuscleActivityClicked"/>
+                        </Grid>
+
+                        <!-- Front and back body placeholders -->
+                        <Grid ColumnDefinitions="*,*"
+                              ColumnSpacing="12"
+                              Padding="0,12">
+
+                            <VerticalStackLayout Grid.Column="0"
+                                                 Spacing="10"
+                                                 HorizontalOptions="Center">
+                                <Label Text="🧍"
+                                       FontSize="95"
+                                       TextColor="#454545"
+                                       HorizontalOptions="Center"/>
+                                <Label Text="FRONT"
+                                       FontSize="12"
+                                       TextColor="#777777"
+                                       HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="1"
+                                                 Spacing="10"
+                                                 HorizontalOptions="Center">
+                                <Label Text="🧍"
+                                       FontSize="95"
+                                       TextColor="#454545"
+                                       HorizontalOptions="Center"/>
+                                <Label Text="BACK"
+                                       FontSize="12"
+                                       TextColor="#777777"
+                                       HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <Label Text="Complete workouts to track your weekly muscle activity."
+                               FontSize="13"
+                               TextColor="#929292"
+                               HorizontalTextAlignment="Center"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Weekly Challenges -->
+                <Border BackgroundColor="#171717"
+                        Stroke="#263C2A"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 30"
+                        Padding="18">
+
+                    <Grid ColumnDefinitions="Auto,*,Auto"
+                          ColumnSpacing="14">
+
+                        <Border WidthRequest="44"
+                                HeightRequest="44"
+                                BackgroundColor="#222922"
+                                Stroke="#39D353"
+                                StrokeThickness="2"
+                                StrokeShape="RoundRectangle 22"
+                                VerticalOptions="Center">
+
+                            <Label Text="●"
+                                   FontSize="19"
+                                   TextColor="#39D353"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"/>
+                        </Border>
+
+                        <VerticalStackLayout Grid.Column="1"
+                                             Spacing="5"
+                                             VerticalOptions="Center">
+                            <Label Text="Weekly challenges"
+                                   FontSize="18"
+                                   FontAttributes="Bold"
+                                   TextColor="White"/>
+                            <Label Text="Build a consistent training streak"
+                                   FontSize="13"
+                                   TextColor="#929292"/>
+                        </VerticalStackLayout>
+
+                        <Button Grid.Column="2"
+                                Text="›"
+                                FontSize="30"
+                                TextColor="#AAAAAA"
+                                BackgroundColor="Transparent"
+                                WidthRequest="30"
+                                Padding="0"
+                                Clicked="OnChallengesClicked"/>
+                    </Grid>
+                </Border>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bottom Navigation -->
+        <Grid Grid.Row="1"
+              BackgroundColor="#111111"
+              Padding="4,10,4,12"
+              ColumnDefinitions="*,*,*,*,*">
+
+            <VerticalStackLayout Grid.Column="0"
+                                 Spacing="4"
+                                 HorizontalOptions="Center">
+                <Label Text="●"
+                       FontSize="25"
+                       TextColor="#39D353"
+                       HorizontalOptions="Center"/>
+                <Label Text="Home"
+                       FontSize="11"
+                       TextColor="#39D353"
+                       HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <Button Grid.Column="1"
+                    Text="♧&#10;Friends"
+                    FontSize="15"
+                    TextColor="#777777"
+                    BackgroundColor="Transparent"
+                    Padding="0"
+                    Clicked="OnFriendsClicked"/>
+
+            <Button Grid.Column="2"
+                    Text="🏋&#10;Workout"
+                    FontSize="15"
+                    TextColor="#777777"
+                    BackgroundColor="Transparent"
+                    Padding="0"
+                    Clicked="OnWorkoutClicked"/>
+
+            <Button Grid.Column="3"
+                    Text="🍴&#10;Nutrition"
+                    FontSize="15"
+                    TextColor="#777777"
+                    BackgroundColor="Transparent"
+                    Padding="0"
+                    Clicked="OnNutritionClicked"/>
+
+            <Button Grid.Column="4"
+                    Text="▥&#10;Stats"
+                    FontSize="15"
+                    TextColor="#777777"
+                    BackgroundColor="Transparent"
+                    Padding="0"
+                    Clicked="OnStatsClicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>
